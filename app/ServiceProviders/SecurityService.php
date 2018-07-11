@@ -6,9 +6,9 @@ use Pimple\Container;
 use App\Users\UserProvider;
 
 class SecurityService implements ServiceProviderInterface{
-    
+
     public function register(Container $app){
-        
+
         $app->register(new \Silex\Provider\SecurityServiceProvider(), array(
             'security.firewalls' => [
                 'login' => array(
@@ -16,6 +16,9 @@ class SecurityService implements ServiceProviderInterface{
                 ),
                 'register' => array(
                     'pattern' => '^/register$',
+                ),
+                'api' => array(
+                    'pattern' => '^/api/.*$',
                 ),
                 'secured' => array(
                     'pattern' => '^.*$',

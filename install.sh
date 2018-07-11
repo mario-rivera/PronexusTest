@@ -44,6 +44,7 @@ mysql_up() {
     -e MYSQL_ROOT_PASSWORD=root \
     -e MYSQL_DATABASE=hellodutch \
     -v $SCRIPT_WORKDIR/docker/mariadb/initdb:/docker-entrypoint-initdb.d \
+    -p 3306:3306 \
     mariadb:10.3
 }
 
