@@ -11,7 +11,7 @@ class ProvinceRecipeRetriever{
         $this->conn = $conn;
     }
 
-    public function getRecipes($province_id, $recipe_id){
+    public function getRecipes($province_id, $category_id){
 
         $query_param_bindings = [$province_id];
         $query = "
